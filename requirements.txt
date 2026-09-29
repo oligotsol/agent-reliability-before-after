@@ -1,0 +1,6 @@
+# Agent Reliability Before & After — dependencies
+# The harness is intentionally stdlib-only (no paid APIs, no GPU, no model download).
+# Pin file kept for portfolio consistency and future optional extensions.
+#
+# Optional (not required to reproduce the committed results):
+# jsonschema==4.23.0

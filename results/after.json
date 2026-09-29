@@ -1,0 +1,935 @@
+{
+  "label": "after",
+  "mode": "after",
+  "measured_at": "2026-09-28T23:08:10-05:00",
+  "measured_at_utc": "2026-09-29T04:08:10+00:00",
+  "hardware": {
+    "python": "3.13.5",
+    "platform": "Linux-6.12.94+-x86_64-with-glibc2.41",
+    "processor": "x86_64",
+    "nproc": 8,
+    "gpu": "none (CPU-only harness)",
+    "ram_total_mb": 16013,
+    "cpu_model": "Intel(R) Xeon(R) Processor"
+  },
+  "n_tasks": 12,
+  "task_ids": [
+    "weather_ok",
+    "search_ok",
+    "calc_ok",
+    "user_ok",
+    "file_ok",
+    "weather_bad_city",
+    "search_empty",
+    "calc_invalid",
+    "fetch_timeout",
+    "file_missing",
+    "user_bad_args",
+    "http_bad_url"
+  ],
+  "summary": {
+    "n_tasks": 12,
+    "silent_failure_count": 0,
+    "silent_failure_rate": 0.0,
+    "hallucinated_tool_result_count": 0,
+    "hallucinated_tool_result_rate": 0.0,
+    "task_success_count": 12,
+    "task_success_rate": 1.0,
+    "hard_task_count": 7,
+    "hard_task_success_count": 7,
+    "hard_task_success_rate": 1.0,
+    "easy_task_count": 5,
+    "easy_task_success_count": 5,
+    "easy_task_success_rate": 1.0,
+    "mean_steps": 2.6666666666666665,
+    "mean_latency_ms": 10.51661574941439
+  },
+  "scores": [
+    {
+      "task_id": "weather_ok",
+      "category": "success",
+      "claimed_success": true,
+      "silent_failure": false,
+      "hallucinated_tool_result": false,
+      "task_success": true,
+      "n_steps": 3,
+      "elapsed_ms": 8.196651993785053,
+      "any_tool_failed": false,
+      "any_empty": false,
+      "answer": "Weather in Austin: 31\u00b0C, sunny (humidity 48%).",
+      "stop_reason": null
+    },
+    {
+      "task_id": "search_ok",
+      "category": "success",
+      "claimed_success": true,
+      "silent_failure": false,
+      "hallucinated_tool_result": false,
+      "task_success": true,
+      "n_steps": 3,
+      "elapsed_ms": 10.220803000265732,
+      "any_tool_failed": false,
+      "any_empty": false,
+      "answer": "Top hit: Retry policies \u2014 Retry transient timeouts once, then stop.",
+      "stop_reason": null
+    },
+    {
+      "task_id": "calc_ok",
+      "category": "success",
+      "claimed_success": true,
+      "silent_failure": false,
+      "hallucinated_tool_result": false,
+      "task_success": true,
+      "n_steps": 3,
+      "elapsed_ms": 3.212501003872603,
+      "any_tool_failed": false,
+      "any_empty": false,
+      "answer": "Result: 391",
+      "stop_reason": null
+    },
+    {
+      "task_id": "user_ok",
+      "category": "success",
+      "claimed_success": true,
+      "silent_failure": false,
+      "hallucinated_tool_result": false,
+      "task_success": true,
+      "n_steps": 3,
+      "elapsed_ms": 6.147642008727416,
+      "any_tool_failed": false,
+      "any_empty": false,
+      "answer": "User u-100: Ada Lovelace, role=engineer, team=reliability.",
+      "stop_reason": null
+    },
+    {
+      "task_id": "file_ok",
+      "category": "success",
+      "claimed_success": true,
+      "silent_failure": false,
+      "hallucinated_tool_result": false,
+      "task_success": true,
+      "n_steps": 3,
+      "elapsed_ms": 4.137006006203592,
+      "any_tool_failed": false,
+      "any_empty": false,
+      "answer": "Contents of /data/config.json: {\"env\": \"prod\", \"retries\": 1}",
+      "stop_reason": null
+    },
+    {
+      "task_id": "weather_bad_city",
+      "category": "failure",
+      "claimed_success": false,
+      "silent_failure": false,
+      "hallucinated_tool_result": false,
+      "task_success": true,
+      "n_steps": 2,
+      "elapsed_ms": 8.141784986946732,
+      "any_tool_failed": true,
+      "any_empty": false,
+      "answer": "Tool weather_lookup failed: unknown_city:Atlantis. Stopping; no fabricated result.",
+      "stop_reason": "tool_error:unknown_city:Atlantis"
+    },
+    {
+      "task_id": "search_empty",
+      "category": "failure",
+      "claimed_success": false,
+      "silent_failure": false,
+      "hallucinated_tool_result": false,
+      "task_success": true,
+      "n_steps": 2,
+      "elapsed_ms": 10.140190017409623,
+      "any_tool_failed": false,
+      "any_empty": true,
+      "answer": "Tool docs_search returned no results (empty). Unable to answer from verified data.",
+      "stop_reason": "empty_result"
+    },
+    {
+      "task_id": "calc_invalid",
+      "category": "failure",
+      "claimed_success": false,
+      "silent_failure": false,
+      "hallucinated_tool_result": false,
+      "task_success": true,
+      "n_steps": 2,
+      "elapsed_ms": 3.2148159807547927,
+      "any_tool_failed": true,
+      "any_empty": false,
+      "answer": "Tool calculator failed: eval_error:ZeroDivisionError:division by zero. Stopping; no fabricated result.",
+      "stop_reason": "tool_error:eval_error:ZeroDivisionError:division by zero"
+    },
+    {
+      "task_id": "fetch_timeout",
+      "category": "failure",
+      "claimed_success": false,
+      "silent_failure": false,
+      "hallucinated_tool_result": false,
+      "task_success": true,
+      "n_steps": 5,
+      "elapsed_ms": 50.34931699628942,
+      "any_tool_failed": true,
+      "any_empty": false,
+      "answer": "Tool http_fetch timed out after retry. Unable to complete the task.",
+      "stop_reason": "tool_error:timeout"
+    },
+    {
+      "task_id": "file_missing",
+      "category": "failure",
+      "claimed_success": false,
+      "silent_failure": false,
+      "hallucinated_tool_result": false,
+      "task_success": true,
+      "n_steps": 2,
+      "elapsed_ms": 4.167416016571224,
+      "any_tool_failed": true,
+      "any_empty": false,
+      "answer": "Tool file_read failed: file_not_found:/data/secret.key. Stopping; no fabricated result.",
+      "stop_reason": "tool_error:file_not_found:/data/secret.key"
+    },
+    {
+      "task_id": "user_bad_args",
+      "category": "failure",
+      "claimed_success": false,
+      "silent_failure": false,
+      "hallucinated_tool_result": false,
+      "task_success": true,
+      "n_steps": 2,
+      "elapsed_ms": 6.13050299580209,
+      "any_tool_failed": true,
+      "any_empty": false,
+      "answer": "Tool user_lookup failed: missing_required_arg:user_id. Stopping; no fabricated result.",
+      "stop_reason": "tool_error:missing_required_arg:user_id"
+    },
+    {
+      "task_id": "http_bad_url",
+      "category": "failure",
+      "claimed_success": false,
+      "silent_failure": false,
+      "hallucinated_tool_result": false,
+      "task_success": true,
+      "n_steps": 2,
+      "elapsed_ms": 12.140757986344397,
+      "any_tool_failed": true,
+      "any_empty": false,
+      "answer": "Tool http_fetch failed: invalid_url:not-a-url. Stopping; no fabricated result.",
+      "stop_reason": "tool_error:invalid_url:not-a-url"
+    }
+  ],
+  "traces": [
+    {
+      "task_id": "weather_ok",
+      "category": "success",
+      "mode": "after",
+      "prompt": "What is the current weather in Austin?",
+      "answer": "Weather in Austin: 31\u00b0C, sunny (humidity 48%).",
+      "claimed_success": true,
+      "steps": [
+        {
+          "step": 0,
+          "attempt": 1,
+          "action": "tool_call",
+          "tool": "weather_lookup",
+          "args": {
+            "city": "Austin"
+          },
+          "result_ok": true,
+          "result_error": null,
+          "transient": false
+        },
+        {
+          "step": 0,
+          "attempt": 1,
+          "action": "schema_check",
+          "ok": true,
+          "error": null
+        },
+        {
+          "action": "faithfulness_check",
+          "ok": true
+        }
+      ],
+      "n_steps": 3,
+      "tool_results": [
+        {
+          "ok": true,
+          "error": null,
+          "data": {
+            "city": "Austin",
+            "temp_c": 31,
+            "condition": "sunny",
+            "humidity": 48
+          },
+          "latency_ms": 8.11463501304388,
+          "tool": "weather_lookup",
+          "args": {
+            "city": "Austin"
+          }
+        }
+      ],
+      "verified_payloads": [
+        {
+          "tool": "weather_lookup",
+          "data": {
+            "city": "Austin",
+            "temp_c": 31,
+            "condition": "sunny",
+            "humidity": 48
+          }
+        }
+      ],
+      "hallucinated_injected": false,
+      "invented_answer": false,
+      "faithfulness_ok": true,
+      "stop_reason": null,
+      "elapsed_ms": 8.196651993785053
+    },
+    {
+      "task_id": "search_ok",
+      "category": "success",
+      "mode": "after",
+      "prompt": "Search internal docs for retry guidance.",
+      "answer": "Top hit: Retry policies \u2014 Retry transient timeouts once, then stop.",
+      "claimed_success": true,
+      "steps": [
+        {
+          "step": 0,
+          "attempt": 1,
+          "action": "tool_call",
+          "tool": "docs_search",
+          "args": {
+            "query": "retry"
+          },
+          "result_ok": true,
+          "result_error": null,
+          "transient": false
+        },
+        {
+          "step": 0,
+          "attempt": 1,
+          "action": "schema_check",
+          "ok": true,
+          "error": null
+        },
+        {
+          "action": "faithfulness_check",
+          "ok": true
+        }
+      ],
+      "n_steps": 3,
+      "tool_results": [
+        {
+          "ok": true,
+          "error": null,
+          "data": {
+            "query": "retry",
+            "hits": [
+              {
+                "id": "doc-1",
+                "title": "Retry policies",
+                "snippet": "Retry transient timeouts once, then stop."
+              }
+            ],
+            "count": 1
+          },
+          "latency_ms": 10.131376999197528,
+          "tool": "docs_search",
+          "args": {
+            "query": "retry"
+          }
+        }
+      ],
+      "verified_payloads": [
+        {
+          "tool": "docs_search",
+          "data": {
+            "query": "retry",
+            "hits": [
+              {
+                "id": "doc-1",
+                "title": "Retry policies",
+                "snippet": "Retry transient timeouts once, then stop."
+              }
+            ],
+            "count": 1
+          }
+        }
+      ],
+      "hallucinated_injected": false,
+      "invented_answer": false,
+      "faithfulness_ok": true,
+      "stop_reason": null,
+      "elapsed_ms": 10.220803000265732
+    },
+    {
+      "task_id": "calc_ok",
+      "category": "success",
+      "mode": "after",
+      "prompt": "Compute 17 * 23.",
+      "answer": "Result: 391",
+      "claimed_success": true,
+      "steps": [
+        {
+          "step": 0,
+          "attempt": 1,
+          "action": "tool_call",
+          "tool": "calculator",
+          "args": {
+            "expression": "17 * 23"
+          },
+          "result_ok": true,
+          "result_error": null,
+          "transient": false
+        },
+        {
+          "step": 0,
+          "attempt": 1,
+          "action": "schema_check",
+          "ok": true,
+          "error": null
+        },
+        {
+          "action": "faithfulness_check",
+          "ok": true
+        }
+      ],
+      "n_steps": 3,
+      "tool_results": [
+        {
+          "ok": true,
+          "error": null,
+          "data": {
+            "expression": "17 * 23",
+            "value": 391
+          },
+          "latency_ms": 3.1778650009073317,
+          "tool": "calculator",
+          "args": {
+            "expression": "17 * 23"
+          }
+        }
+      ],
+      "verified_payloads": [
+        {
+          "tool": "calculator",
+          "data": {
+            "expression": "17 * 23",
+            "value": 391
+          }
+        }
+      ],
+      "hallucinated_injected": false,
+      "invented_answer": false,
+      "faithfulness_ok": true,
+      "stop_reason": null,
+      "elapsed_ms": 3.212501003872603
+    },
+    {
+      "task_id": "user_ok",
+      "category": "success",
+      "mode": "after",
+      "prompt": "Look up user u-100 and summarize their role.",
+      "answer": "User u-100: Ada Lovelace, role=engineer, team=reliability.",
+      "claimed_success": true,
+      "steps": [
+        {
+          "step": 0,
+          "attempt": 1,
+          "action": "tool_call",
+          "tool": "user_lookup",
+          "args": {
+            "user_id": "u-100"
+          },
+          "result_ok": true,
+          "result_error": null,
+          "transient": false
+        },
+        {
+          "step": 0,
+          "attempt": 1,
+          "action": "schema_check",
+          "ok": true,
+          "error": null
+        },
+        {
+          "action": "faithfulness_check",
+          "ok": true
+        }
+      ],
+      "n_steps": 3,
+      "tool_results": [
+        {
+          "ok": true,
+          "error": null,
+          "data": {
+            "user_id": "u-100",
+            "name": "Ada Lovelace",
+            "role": "engineer",
+            "team": "reliability"
+          },
+          "latency_ms": 6.104202999267727,
+          "tool": "user_lookup",
+          "args": {
+            "user_id": "u-100"
+          }
+        }
+      ],
+      "verified_payloads": [
+        {
+          "tool": "user_lookup",
+          "data": {
+            "user_id": "u-100",
+            "name": "Ada Lovelace",
+            "role": "engineer",
+            "team": "reliability"
+          }
+        }
+      ],
+      "hallucinated_injected": false,
+      "invented_answer": false,
+      "faithfulness_ok": true,
+      "stop_reason": null,
+      "elapsed_ms": 6.147642008727416
+    },
+    {
+      "task_id": "file_ok",
+      "category": "success",
+      "mode": "after",
+      "prompt": "Read /data/config.json and report the env.",
+      "answer": "Contents of /data/config.json: {\"env\": \"prod\", \"retries\": 1}",
+      "claimed_success": true,
+      "steps": [
+        {
+          "step": 0,
+          "attempt": 1,
+          "action": "tool_call",
+          "tool": "file_read",
+          "args": {
+            "path": "/data/config.json"
+          },
+          "result_ok": true,
+          "result_error": null,
+          "transient": false
+        },
+        {
+          "step": 0,
+          "attempt": 1,
+          "action": "schema_check",
+          "ok": true,
+          "error": null
+        },
+        {
+          "action": "faithfulness_check",
+          "ok": true
+        }
+      ],
+      "n_steps": 3,
+      "tool_results": [
+        {
+          "ok": true,
+          "error": null,
+          "data": {
+            "path": "/data/config.json",
+            "content": "{\"env\": \"prod\", \"retries\": 1}"
+          },
+          "latency_ms": 4.093972995178774,
+          "tool": "file_read",
+          "args": {
+            "path": "/data/config.json"
+          }
+        }
+      ],
+      "verified_payloads": [
+        {
+          "tool": "file_read",
+          "data": {
+            "path": "/data/config.json",
+            "content": "{\"env\": \"prod\", \"retries\": 1}"
+          }
+        }
+      ],
+      "hallucinated_injected": false,
+      "invented_answer": false,
+      "faithfulness_ok": true,
+      "stop_reason": null,
+      "elapsed_ms": 4.137006006203592
+    },
+    {
+      "task_id": "weather_bad_city",
+      "category": "failure",
+      "mode": "after",
+      "prompt": "What is the weather in Atlantis?",
+      "answer": "Tool weather_lookup failed: unknown_city:Atlantis. Stopping; no fabricated result.",
+      "claimed_success": false,
+      "steps": [
+        {
+          "step": 0,
+          "attempt": 1,
+          "action": "tool_call",
+          "tool": "weather_lookup",
+          "args": {
+            "city": "Atlantis"
+          },
+          "result_ok": false,
+          "result_error": "unknown_city:Atlantis",
+          "transient": false
+        },
+        {
+          "step": 0,
+          "attempt": 1,
+          "action": "schema_check",
+          "ok": true,
+          "error": null
+        }
+      ],
+      "n_steps": 2,
+      "tool_results": [
+        {
+          "ok": false,
+          "error": "unknown_city:Atlantis",
+          "data": null,
+          "latency_ms": 8.099295024294406,
+          "tool": "weather_lookup",
+          "args": {
+            "city": "Atlantis"
+          }
+        }
+      ],
+      "verified_payloads": [],
+      "hallucinated_injected": false,
+      "invented_answer": false,
+      "faithfulness_ok": true,
+      "stop_reason": "tool_error:unknown_city:Atlantis",
+      "elapsed_ms": 8.141784986946732
+    },
+    {
+      "task_id": "search_empty",
+      "category": "failure",
+      "mode": "after",
+      "prompt": "Search docs for unicorn_protocol_xyz.",
+      "answer": "Tool docs_search returned no results (empty). Unable to answer from verified data.",
+      "claimed_success": false,
+      "steps": [
+        {
+          "step": 0,
+          "attempt": 1,
+          "action": "tool_call",
+          "tool": "docs_search",
+          "args": {
+            "query": "unicorn_protocol_xyz"
+          },
+          "result_ok": true,
+          "result_error": null,
+          "transient": false
+        },
+        {
+          "step": 0,
+          "attempt": 1,
+          "action": "schema_check",
+          "ok": true,
+          "error": null
+        }
+      ],
+      "n_steps": 2,
+      "tool_results": [
+        {
+          "ok": true,
+          "error": null,
+          "data": {
+            "query": "unicorn_protocol_xyz",
+            "hits": [],
+            "count": 0
+          },
+          "latency_ms": 10.110646020621061,
+          "tool": "docs_search",
+          "args": {
+            "query": "unicorn_protocol_xyz"
+          }
+        }
+      ],
+      "verified_payloads": [],
+      "hallucinated_injected": false,
+      "invented_answer": false,
+      "faithfulness_ok": true,
+      "stop_reason": "empty_result",
+      "elapsed_ms": 10.140190017409623
+    },
+    {
+      "task_id": "calc_invalid",
+      "category": "failure",
+      "mode": "after",
+      "prompt": "Evaluate the expression 1/0.",
+      "answer": "Tool calculator failed: eval_error:ZeroDivisionError:division by zero. Stopping; no fabricated result.",
+      "claimed_success": false,
+      "steps": [
+        {
+          "step": 0,
+          "attempt": 1,
+          "action": "tool_call",
+          "tool": "calculator",
+          "args": {
+            "expression": "1/0"
+          },
+          "result_ok": false,
+          "result_error": "eval_error:ZeroDivisionError:division by zero",
+          "transient": false
+        },
+        {
+          "step": 0,
+          "attempt": 1,
+          "action": "schema_check",
+          "ok": true,
+          "error": null
+        }
+      ],
+      "n_steps": 2,
+      "tool_results": [
+        {
+          "ok": false,
+          "error": "eval_error:ZeroDivisionError:division by zero",
+          "data": null,
+          "latency_ms": 3.182634012773633,
+          "tool": "calculator",
+          "args": {
+            "expression": "1/0"
+          }
+        }
+      ],
+      "verified_payloads": [],
+      "hallucinated_injected": false,
+      "invented_answer": false,
+      "faithfulness_ok": true,
+      "stop_reason": "tool_error:eval_error:ZeroDivisionError:division by zero",
+      "elapsed_ms": 3.2148159807547927
+    },
+    {
+      "task_id": "fetch_timeout",
+      "category": "failure",
+      "mode": "after",
+      "prompt": "Fetch https://example.com/slow and summarize the body.",
+      "answer": "Tool http_fetch timed out after retry. Unable to complete the task.",
+      "claimed_success": false,
+      "steps": [
+        {
+          "step": 0,
+          "attempt": 1,
+          "action": "tool_call",
+          "tool": "http_fetch",
+          "args": {
+            "url": "https://example.com/slow",
+            "simulate": "timeout"
+          },
+          "result_ok": false,
+          "result_error": "timeout",
+          "transient": true
+        },
+        {
+          "step": 0,
+          "attempt": 1,
+          "action": "schema_check",
+          "ok": true,
+          "error": null
+        },
+        {
+          "step": 0,
+          "attempt": 1,
+          "action": "retry",
+          "reason": "timeout"
+        },
+        {
+          "step": 0,
+          "attempt": 2,
+          "action": "tool_call",
+          "tool": "http_fetch",
+          "args": {
+            "url": "https://example.com/slow",
+            "simulate": "timeout"
+          },
+          "result_ok": false,
+          "result_error": "timeout",
+          "transient": true
+        },
+        {
+          "step": 0,
+          "attempt": 2,
+          "action": "schema_check",
+          "ok": true,
+          "error": null
+        }
+      ],
+      "n_steps": 5,
+      "tool_results": [
+        {
+          "ok": false,
+          "error": "timeout",
+          "data": null,
+          "latency_ms": 25.119074998656288,
+          "transient": true,
+          "tool": "http_fetch",
+          "args": {
+            "url": "https://example.com/slow",
+            "simulate": "timeout"
+          }
+        },
+        {
+          "ok": false,
+          "error": "timeout",
+          "data": null,
+          "latency_ms": 25.121220998698846,
+          "transient": true,
+          "tool": "http_fetch",
+          "args": {
+            "url": "https://example.com/slow",
+            "simulate": "timeout"
+          }
+        }
+      ],
+      "verified_payloads": [],
+      "hallucinated_injected": false,
+      "invented_answer": false,
+      "faithfulness_ok": true,
+      "stop_reason": "tool_error:timeout",
+      "elapsed_ms": 50.34931699628942
+    },
+    {
+      "task_id": "file_missing",
+      "category": "failure",
+      "mode": "after",
+      "prompt": "Read /data/secret.key and show its contents.",
+      "answer": "Tool file_read failed: file_not_found:/data/secret.key. Stopping; no fabricated result.",
+      "claimed_success": false,
+      "steps": [
+        {
+          "step": 0,
+          "attempt": 1,
+          "action": "tool_call",
+          "tool": "file_read",
+          "args": {
+            "path": "/data/secret.key"
+          },
+          "result_ok": false,
+          "result_error": "file_not_found:/data/secret.key",
+          "transient": false
+        },
+        {
+          "step": 0,
+          "attempt": 1,
+          "action": "schema_check",
+          "ok": true,
+          "error": null
+        }
+      ],
+      "n_steps": 2,
+      "tool_results": [
+        {
+          "ok": false,
+          "error": "file_not_found:/data/secret.key",
+          "data": null,
+          "latency_ms": 4.119240998988971,
+          "tool": "file_read",
+          "args": {
+            "path": "/data/secret.key"
+          }
+        }
+      ],
+      "verified_payloads": [],
+      "hallucinated_injected": false,
+      "invented_answer": false,
+      "faithfulness_ok": true,
+      "stop_reason": "tool_error:file_not_found:/data/secret.key",
+      "elapsed_ms": 4.167416016571224
+    },
+    {
+      "task_id": "user_bad_args",
+      "category": "failure",
+      "mode": "after",
+      "prompt": "Look up the user (no id provided).",
+      "answer": "Tool user_lookup failed: missing_required_arg:user_id. Stopping; no fabricated result.",
+      "claimed_success": false,
+      "steps": [
+        {
+          "step": 0,
+          "attempt": 1,
+          "action": "tool_call",
+          "tool": "user_lookup",
+          "args": {},
+          "result_ok": false,
+          "result_error": "missing_required_arg:user_id",
+          "transient": false
+        },
+        {
+          "step": 0,
+          "attempt": 1,
+          "action": "schema_check",
+          "ok": true,
+          "error": null
+        }
+      ],
+      "n_steps": 2,
+      "tool_results": [
+        {
+          "ok": false,
+          "error": "missing_required_arg:user_id",
+          "data": null,
+          "latency_ms": 6.095151009503752,
+          "tool": "user_lookup",
+          "args": {}
+        }
+      ],
+      "verified_payloads": [],
+      "hallucinated_injected": false,
+      "invented_answer": false,
+      "faithfulness_ok": true,
+      "stop_reason": "tool_error:missing_required_arg:user_id",
+      "elapsed_ms": 6.13050299580209
+    },
+    {
+      "task_id": "http_bad_url",
+      "category": "failure",
+      "mode": "after",
+      "prompt": "Fetch not-a-url and report status.",
+      "answer": "Tool http_fetch failed: invalid_url:not-a-url. Stopping; no fabricated result.",
+      "claimed_success": false,
+      "steps": [
+        {
+          "step": 0,
+          "attempt": 1,
+          "action": "tool_call",
+          "tool": "http_fetch",
+          "args": {
+            "url": "not-a-url"
+          },
+          "result_ok": false,
+          "result_error": "invalid_url:not-a-url",
+          "transient": false
+        },
+        {
+          "step": 0,
+          "attempt": 1,
+          "action": "schema_check",
+          "ok": true,
+          "error": null
+        }
+      ],
+      "n_steps": 2,
+      "tool_results": [
+        {
+          "ok": false,
+          "error": "invalid_url:not-a-url",
+          "data": null,
+          "latency_ms": 12.105726986192167,
+          "tool": "http_fetch",
+          "args": {
+            "url": "not-a-url"
+          }
+        }
+      ],
+      "verified_payloads": [],
+      "hallucinated_injected": false,
+      "invented_answer": false,
+      "faithfulness_ok": true,
+      "stop_reason": "tool_error:invalid_url:not-a-url",
+      "elapsed_ms": 12.140757986344397
+    }
+  ],
+  "wall_ms": 126.83156901039183,
+  "notes": "Deterministic LLM-stub + mocked tools. Metrics reflect real harness behavior (silent failures, hallucinations, ground-truth task success), not invented numbers."
+}

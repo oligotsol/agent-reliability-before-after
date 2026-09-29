@@ -1,0 +1,895 @@
+{
+  "label": "before",
+  "mode": "before",
+  "measured_at": "2026-09-28T23:08:09-05:00",
+  "measured_at_utc": "2026-09-29T04:08:09+00:00",
+  "hardware": {
+    "python": "3.13.5",
+    "platform": "Linux-6.12.94+-x86_64-with-glibc2.41",
+    "processor": "x86_64",
+    "nproc": 8,
+    "gpu": "none (CPU-only harness)",
+    "ram_total_mb": 16013,
+    "cpu_model": "Intel(R) Xeon(R) Processor"
+  },
+  "n_tasks": 12,
+  "task_ids": [
+    "weather_ok",
+    "search_ok",
+    "calc_ok",
+    "user_ok",
+    "file_ok",
+    "weather_bad_city",
+    "search_empty",
+    "calc_invalid",
+    "fetch_timeout",
+    "file_missing",
+    "user_bad_args",
+    "http_bad_url"
+  ],
+  "summary": {
+    "n_tasks": 12,
+    "silent_failure_count": 7,
+    "silent_failure_rate": 0.5833333333333334,
+    "hallucinated_tool_result_count": 7,
+    "hallucinated_tool_result_rate": 0.5833333333333334,
+    "task_success_count": 5,
+    "task_success_rate": 0.4166666666666667,
+    "hard_task_count": 7,
+    "hard_task_success_count": 0,
+    "hard_task_success_rate": 0.0,
+    "easy_task_count": 5,
+    "easy_task_success_count": 5,
+    "easy_task_success_rate": 1.0,
+    "mean_steps": 1.5833333333333333,
+    "mean_latency_ms": 8.399528085040705
+  },
+  "scores": [
+    {
+      "task_id": "weather_ok",
+      "category": "success",
+      "claimed_success": true,
+      "silent_failure": false,
+      "hallucinated_tool_result": false,
+      "task_success": true,
+      "n_steps": 1,
+      "elapsed_ms": 8.119998994516209,
+      "any_tool_failed": false,
+      "any_empty": false,
+      "answer": "Weather in Austin: 31\u00b0C, sunny (humidity 48%).",
+      "stop_reason": null
+    },
+    {
+      "task_id": "search_ok",
+      "category": "success",
+      "claimed_success": true,
+      "silent_failure": false,
+      "hallucinated_tool_result": false,
+      "task_success": true,
+      "n_steps": 1,
+      "elapsed_ms": 10.126976994797587,
+      "any_tool_failed": false,
+      "any_empty": false,
+      "answer": "Top hit: Retry policies \u2014 Retry transient timeouts once, then stop.",
+      "stop_reason": null
+    },
+    {
+      "task_id": "calc_ok",
+      "category": "success",
+      "claimed_success": true,
+      "silent_failure": false,
+      "hallucinated_tool_result": false,
+      "task_success": true,
+      "n_steps": 1,
+      "elapsed_ms": 3.159586020046845,
+      "any_tool_failed": false,
+      "any_empty": false,
+      "answer": "Result: 391",
+      "stop_reason": null
+    },
+    {
+      "task_id": "user_ok",
+      "category": "success",
+      "claimed_success": true,
+      "silent_failure": false,
+      "hallucinated_tool_result": false,
+      "task_success": true,
+      "n_steps": 1,
+      "elapsed_ms": 6.0987729812040925,
+      "any_tool_failed": false,
+      "any_empty": false,
+      "answer": "User u-100: Ada Lovelace, role=engineer, team=reliability.",
+      "stop_reason": null
+    },
+    {
+      "task_id": "file_ok",
+      "category": "success",
+      "claimed_success": true,
+      "silent_failure": false,
+      "hallucinated_tool_result": false,
+      "task_success": true,
+      "n_steps": 1,
+      "elapsed_ms": 4.10247000399977,
+      "any_tool_failed": false,
+      "any_empty": false,
+      "answer": "Contents of /data/config.json: {\"env\": \"prod\", \"retries\": 1}",
+      "stop_reason": null
+    },
+    {
+      "task_id": "weather_bad_city",
+      "category": "failure",
+      "claimed_success": true,
+      "silent_failure": true,
+      "hallucinated_tool_result": true,
+      "task_success": false,
+      "n_steps": 2,
+      "elapsed_ms": 8.109243004582822,
+      "any_tool_failed": true,
+      "any_empty": false,
+      "answer": "It's currently 72\u00b0F and partly cloudy.",
+      "stop_reason": null
+    },
+    {
+      "task_id": "search_empty",
+      "category": "failure",
+      "claimed_success": true,
+      "silent_failure": true,
+      "hallucinated_tool_result": true,
+      "task_success": false,
+      "n_steps": 2,
+      "elapsed_ms": 10.157509008422494,
+      "any_tool_failed": false,
+      "any_empty": true,
+      "answer": "I found a doc titled 'Unicorn Protocol Overview' describing the feature.",
+      "stop_reason": null
+    },
+    {
+      "task_id": "calc_invalid",
+      "category": "failure",
+      "claimed_success": true,
+      "silent_failure": true,
+      "hallucinated_tool_result": true,
+      "task_success": false,
+      "n_steps": 2,
+      "elapsed_ms": 3.3318909991066903,
+      "any_tool_failed": true,
+      "any_empty": false,
+      "answer": "The result is 0.",
+      "stop_reason": null
+    },
+    {
+      "task_id": "fetch_timeout",
+      "category": "failure",
+      "claimed_success": true,
+      "silent_failure": true,
+      "hallucinated_tool_result": true,
+      "task_success": false,
+      "n_steps": 2,
+      "elapsed_ms": 25.15171200502664,
+      "any_tool_failed": true,
+      "any_empty": false,
+      "answer": "The endpoint returned status 200 with body: OK.",
+      "stop_reason": null
+    },
+    {
+      "task_id": "file_missing",
+      "category": "failure",
+      "claimed_success": true,
+      "silent_failure": true,
+      "hallucinated_tool_result": true,
+      "task_success": false,
+      "n_steps": 2,
+      "elapsed_ms": 4.155842994805425,
+      "any_tool_failed": true,
+      "any_empty": false,
+      "answer": "File contents: (redacted placeholder secret).",
+      "stop_reason": null
+    },
+    {
+      "task_id": "user_bad_args",
+      "category": "failure",
+      "claimed_success": true,
+      "silent_failure": true,
+      "hallucinated_tool_result": true,
+      "task_success": false,
+      "n_steps": 2,
+      "elapsed_ms": 6.137510004919022,
+      "any_tool_failed": true,
+      "any_empty": false,
+      "answer": "User profile: name=Unknown User, role=member.",
+      "stop_reason": null
+    },
+    {
+      "task_id": "http_bad_url",
+      "category": "failure",
+      "claimed_success": true,
+      "silent_failure": true,
+      "hallucinated_tool_result": true,
+      "task_success": false,
+      "n_steps": 2,
+      "elapsed_ms": 12.14282400906086,
+      "any_tool_failed": true,
+      "any_empty": false,
+      "answer": "The endpoint returned status 200 with body: OK.",
+      "stop_reason": null
+    }
+  ],
+  "traces": [
+    {
+      "task_id": "weather_ok",
+      "category": "success",
+      "mode": "before",
+      "prompt": "What is the current weather in Austin?",
+      "answer": "Weather in Austin: 31\u00b0C, sunny (humidity 48%).",
+      "claimed_success": true,
+      "steps": [
+        {
+          "step": 0,
+          "action": "tool_call",
+          "tool": "weather_lookup",
+          "args": {
+            "city": "Austin"
+          },
+          "result_ok": true,
+          "result_error": null,
+          "result_data": {
+            "city": "Austin",
+            "temp_c": 31,
+            "condition": "sunny",
+            "humidity": 48
+          }
+        }
+      ],
+      "n_steps": 1,
+      "tool_results": [
+        {
+          "ok": true,
+          "error": null,
+          "data": {
+            "city": "Austin",
+            "temp_c": 31,
+            "condition": "sunny",
+            "humidity": 48
+          },
+          "latency_ms": 8.096597011899576,
+          "tool": "weather_lookup",
+          "args": {
+            "city": "Austin"
+          }
+        }
+      ],
+      "hallucinated_injected": false,
+      "invented_answer": false,
+      "elapsed_ms": 8.119998994516209
+    },
+    {
+      "task_id": "search_ok",
+      "category": "success",
+      "mode": "before",
+      "prompt": "Search internal docs for retry guidance.",
+      "answer": "Top hit: Retry policies \u2014 Retry transient timeouts once, then stop.",
+      "claimed_success": true,
+      "steps": [
+        {
+          "step": 0,
+          "action": "tool_call",
+          "tool": "docs_search",
+          "args": {
+            "query": "retry"
+          },
+          "result_ok": true,
+          "result_error": null,
+          "result_data": {
+            "query": "retry",
+            "hits": [
+              {
+                "id": "doc-1",
+                "title": "Retry policies",
+                "snippet": "Retry transient timeouts once, then stop."
+              }
+            ],
+            "count": 1
+          }
+        }
+      ],
+      "n_steps": 1,
+      "tool_results": [
+        {
+          "ok": true,
+          "error": null,
+          "data": {
+            "query": "retry",
+            "hits": [
+              {
+                "id": "doc-1",
+                "title": "Retry policies",
+                "snippet": "Retry transient timeouts once, then stop."
+              }
+            ],
+            "count": 1
+          },
+          "latency_ms": 10.098074999405071,
+          "tool": "docs_search",
+          "args": {
+            "query": "retry"
+          }
+        }
+      ],
+      "hallucinated_injected": false,
+      "invented_answer": false,
+      "elapsed_ms": 10.126976994797587
+    },
+    {
+      "task_id": "calc_ok",
+      "category": "success",
+      "mode": "before",
+      "prompt": "Compute 17 * 23.",
+      "answer": "Result: 391",
+      "claimed_success": true,
+      "steps": [
+        {
+          "step": 0,
+          "action": "tool_call",
+          "tool": "calculator",
+          "args": {
+            "expression": "17 * 23"
+          },
+          "result_ok": true,
+          "result_error": null,
+          "result_data": {
+            "expression": "17 * 23",
+            "value": 391
+          }
+        }
+      ],
+      "n_steps": 1,
+      "tool_results": [
+        {
+          "ok": true,
+          "error": null,
+          "data": {
+            "expression": "17 * 23",
+            "value": 391
+          },
+          "latency_ms": 3.1429539958480746,
+          "tool": "calculator",
+          "args": {
+            "expression": "17 * 23"
+          }
+        }
+      ],
+      "hallucinated_injected": false,
+      "invented_answer": false,
+      "elapsed_ms": 3.159586020046845
+    },
+    {
+      "task_id": "user_ok",
+      "category": "success",
+      "mode": "before",
+      "prompt": "Look up user u-100 and summarize their role.",
+      "answer": "User u-100: Ada Lovelace, role=engineer, team=reliability.",
+      "claimed_success": true,
+      "steps": [
+        {
+          "step": 0,
+          "action": "tool_call",
+          "tool": "user_lookup",
+          "args": {
+            "user_id": "u-100"
+          },
+          "result_ok": true,
+          "result_error": null,
+          "result_data": {
+            "user_id": "u-100",
+            "name": "Ada Lovelace",
+            "role": "engineer",
+            "team": "reliability"
+          }
+        }
+      ],
+      "n_steps": 1,
+      "tool_results": [
+        {
+          "ok": true,
+          "error": null,
+          "data": {
+            "user_id": "u-100",
+            "name": "Ada Lovelace",
+            "role": "engineer",
+            "team": "reliability"
+          },
+          "latency_ms": 6.078693986637518,
+          "tool": "user_lookup",
+          "args": {
+            "user_id": "u-100"
+          }
+        }
+      ],
+      "hallucinated_injected": false,
+      "invented_answer": false,
+      "elapsed_ms": 6.0987729812040925
+    },
+    {
+      "task_id": "file_ok",
+      "category": "success",
+      "mode": "before",
+      "prompt": "Read /data/config.json and report the env.",
+      "answer": "Contents of /data/config.json: {\"env\": \"prod\", \"retries\": 1}",
+      "claimed_success": true,
+      "steps": [
+        {
+          "step": 0,
+          "action": "tool_call",
+          "tool": "file_read",
+          "args": {
+            "path": "/data/config.json"
+          },
+          "result_ok": true,
+          "result_error": null,
+          "result_data": {
+            "path": "/data/config.json",
+            "content": "{\"env\": \"prod\", \"retries\": 1}"
+          }
+        }
+      ],
+      "n_steps": 1,
+      "tool_results": [
+        {
+          "ok": true,
+          "error": null,
+          "data": {
+            "path": "/data/config.json",
+            "content": "{\"env\": \"prod\", \"retries\": 1}"
+          },
+          "latency_ms": 4.080151004018262,
+          "tool": "file_read",
+          "args": {
+            "path": "/data/config.json"
+          }
+        }
+      ],
+      "hallucinated_injected": false,
+      "invented_answer": false,
+      "elapsed_ms": 4.10247000399977
+    },
+    {
+      "task_id": "weather_bad_city",
+      "category": "failure",
+      "mode": "before",
+      "prompt": "What is the weather in Atlantis?",
+      "answer": "It's currently 72\u00b0F and partly cloudy.",
+      "claimed_success": true,
+      "steps": [
+        {
+          "step": 0,
+          "action": "tool_call",
+          "tool": "weather_lookup",
+          "args": {
+            "city": "Atlantis"
+          },
+          "result_ok": false,
+          "result_error": "unknown_city:Atlantis",
+          "result_data": null
+        },
+        {
+          "step": 0,
+          "action": "hallucinated_tool_result",
+          "tool": "weather_lookup",
+          "fake_data": {
+            "city": "Unknown",
+            "temp_c": 22,
+            "condition": "partly cloudy"
+          }
+        }
+      ],
+      "n_steps": 2,
+      "tool_results": [
+        {
+          "ok": false,
+          "error": "unknown_city:Atlantis",
+          "data": null,
+          "latency_ms": 8.082690997980535,
+          "tool": "weather_lookup",
+          "args": {
+            "city": "Atlantis"
+          }
+        },
+        {
+          "ok": true,
+          "error": null,
+          "data": {
+            "city": "Unknown",
+            "temp_c": 22,
+            "condition": "partly cloudy"
+          },
+          "tool": "weather_lookup",
+          "args": {
+            "city": "Atlantis"
+          },
+          "hallucinated": true
+        }
+      ],
+      "hallucinated_injected": true,
+      "invented_answer": true,
+      "elapsed_ms": 8.109243004582822
+    },
+    {
+      "task_id": "search_empty",
+      "category": "failure",
+      "mode": "before",
+      "prompt": "Search docs for unicorn_protocol_xyz.",
+      "answer": "I found a doc titled 'Unicorn Protocol Overview' describing the feature.",
+      "claimed_success": true,
+      "steps": [
+        {
+          "step": 0,
+          "action": "tool_call",
+          "tool": "docs_search",
+          "args": {
+            "query": "unicorn_protocol_xyz"
+          },
+          "result_ok": true,
+          "result_error": null,
+          "result_data": {
+            "query": "unicorn_protocol_xyz",
+            "hits": [],
+            "count": 0
+          }
+        },
+        {
+          "step": 0,
+          "action": "hallucinated_tool_result",
+          "tool": "docs_search",
+          "fake_data": {
+            "hits": [
+              {
+                "id": "hallucinated",
+                "title": "Unicorn Protocol Overview",
+                "snippet": "..."
+              }
+            ],
+            "count": 1
+          }
+        }
+      ],
+      "n_steps": 2,
+      "tool_results": [
+        {
+          "ok": true,
+          "error": null,
+          "data": {
+            "query": "unicorn_protocol_xyz",
+            "hits": [],
+            "count": 0
+          },
+          "latency_ms": 10.105966008268297,
+          "tool": "docs_search",
+          "args": {
+            "query": "unicorn_protocol_xyz"
+          }
+        },
+        {
+          "ok": true,
+          "error": null,
+          "data": {
+            "hits": [
+              {
+                "id": "hallucinated",
+                "title": "Unicorn Protocol Overview",
+                "snippet": "..."
+              }
+            ],
+            "count": 1
+          },
+          "tool": "docs_search",
+          "args": {
+            "query": "unicorn_protocol_xyz"
+          },
+          "hallucinated": true
+        }
+      ],
+      "hallucinated_injected": true,
+      "invented_answer": true,
+      "elapsed_ms": 10.157509008422494
+    },
+    {
+      "task_id": "calc_invalid",
+      "category": "failure",
+      "mode": "before",
+      "prompt": "Evaluate the expression 1/0.",
+      "answer": "The result is 0.",
+      "claimed_success": true,
+      "steps": [
+        {
+          "step": 0,
+          "action": "tool_call",
+          "tool": "calculator",
+          "args": {
+            "expression": "1/0"
+          },
+          "result_ok": false,
+          "result_error": "eval_error:ZeroDivisionError:division by zero",
+          "result_data": null
+        },
+        {
+          "step": 0,
+          "action": "hallucinated_tool_result",
+          "tool": "calculator",
+          "fake_data": {
+            "value": 0
+          }
+        }
+      ],
+      "n_steps": 2,
+      "tool_results": [
+        {
+          "ok": false,
+          "error": "eval_error:ZeroDivisionError:division by zero",
+          "data": null,
+          "latency_ms": 3.2932220201473683,
+          "tool": "calculator",
+          "args": {
+            "expression": "1/0"
+          }
+        },
+        {
+          "ok": true,
+          "error": null,
+          "data": {
+            "value": 0
+          },
+          "tool": "calculator",
+          "args": {
+            "expression": "1/0"
+          },
+          "hallucinated": true
+        }
+      ],
+      "hallucinated_injected": true,
+      "invented_answer": true,
+      "elapsed_ms": 3.3318909991066903
+    },
+    {
+      "task_id": "fetch_timeout",
+      "category": "failure",
+      "mode": "before",
+      "prompt": "Fetch https://example.com/slow and summarize the body.",
+      "answer": "The endpoint returned status 200 with body: OK.",
+      "claimed_success": true,
+      "steps": [
+        {
+          "step": 0,
+          "action": "tool_call",
+          "tool": "http_fetch",
+          "args": {
+            "url": "https://example.com/slow",
+            "simulate": "timeout"
+          },
+          "result_ok": false,
+          "result_error": "timeout",
+          "result_data": null
+        },
+        {
+          "step": 0,
+          "action": "hallucinated_tool_result",
+          "tool": "http_fetch",
+          "fake_data": {
+            "url": "?",
+            "status": 200,
+            "body": "OK"
+          }
+        }
+      ],
+      "n_steps": 2,
+      "tool_results": [
+        {
+          "ok": false,
+          "error": "timeout",
+          "data": null,
+          "latency_ms": 25.110786984441802,
+          "transient": true,
+          "tool": "http_fetch",
+          "args": {
+            "url": "https://example.com/slow",
+            "simulate": "timeout"
+          }
+        },
+        {
+          "ok": true,
+          "error": null,
+          "data": {
+            "url": "?",
+            "status": 200,
+            "body": "OK"
+          },
+          "tool": "http_fetch",
+          "args": {
+            "url": "https://example.com/slow",
+            "simulate": "timeout"
+          },
+          "hallucinated": true
+        }
+      ],
+      "hallucinated_injected": true,
+      "invented_answer": true,
+      "elapsed_ms": 25.15171200502664
+    },
+    {
+      "task_id": "file_missing",
+      "category": "failure",
+      "mode": "before",
+      "prompt": "Read /data/secret.key and show its contents.",
+      "answer": "File contents: (redacted placeholder secret).",
+      "claimed_success": true,
+      "steps": [
+        {
+          "step": 0,
+          "action": "tool_call",
+          "tool": "file_read",
+          "args": {
+            "path": "/data/secret.key"
+          },
+          "result_ok": false,
+          "result_error": "file_not_found:/data/secret.key",
+          "result_data": null
+        },
+        {
+          "step": 0,
+          "action": "hallucinated_tool_result",
+          "tool": "file_read",
+          "fake_data": {
+            "path": "?",
+            "content": "(redacted placeholder secret)"
+          }
+        }
+      ],
+      "n_steps": 2,
+      "tool_results": [
+        {
+          "ok": false,
+          "error": "file_not_found:/data/secret.key",
+          "data": null,
+          "latency_ms": 4.122056008782238,
+          "tool": "file_read",
+          "args": {
+            "path": "/data/secret.key"
+          }
+        },
+        {
+          "ok": true,
+          "error": null,
+          "data": {
+            "path": "?",
+            "content": "(redacted placeholder secret)"
+          },
+          "tool": "file_read",
+          "args": {
+            "path": "/data/secret.key"
+          },
+          "hallucinated": true
+        }
+      ],
+      "hallucinated_injected": true,
+      "invented_answer": true,
+      "elapsed_ms": 4.155842994805425
+    },
+    {
+      "task_id": "user_bad_args",
+      "category": "failure",
+      "mode": "before",
+      "prompt": "Look up the user (no id provided).",
+      "answer": "User profile: name=Unknown User, role=member.",
+      "claimed_success": true,
+      "steps": [
+        {
+          "step": 0,
+          "action": "tool_call",
+          "tool": "user_lookup",
+          "args": {},
+          "result_ok": false,
+          "result_error": "missing_required_arg:user_id",
+          "result_data": null
+        },
+        {
+          "step": 0,
+          "action": "hallucinated_tool_result",
+          "tool": "user_lookup",
+          "fake_data": {
+            "user_id": "?",
+            "name": "Unknown User",
+            "role": "member"
+          }
+        }
+      ],
+      "n_steps": 2,
+      "tool_results": [
+        {
+          "ok": false,
+          "error": "missing_required_arg:user_id",
+          "data": null,
+          "latency_ms": 6.1043449968565255,
+          "tool": "user_lookup",
+          "args": {}
+        },
+        {
+          "ok": true,
+          "error": null,
+          "data": {
+            "user_id": "?",
+            "name": "Unknown User",
+            "role": "member"
+          },
+          "tool": "user_lookup",
+          "args": {},
+          "hallucinated": true
+        }
+      ],
+      "hallucinated_injected": true,
+      "invented_answer": true,
+      "elapsed_ms": 6.137510004919022
+    },
+    {
+      "task_id": "http_bad_url",
+      "category": "failure",
+      "mode": "before",
+      "prompt": "Fetch not-a-url and report status.",
+      "answer": "The endpoint returned status 200 with body: OK.",
+      "claimed_success": true,
+      "steps": [
+        {
+          "step": 0,
+          "action": "tool_call",
+          "tool": "http_fetch",
+          "args": {
+            "url": "not-a-url"
+          },
+          "result_ok": false,
+          "result_error": "invalid_url:not-a-url",
+          "result_data": null
+        },
+        {
+          "step": 0,
+          "action": "hallucinated_tool_result",
+          "tool": "http_fetch",
+          "fake_data": {
+            "url": "?",
+            "status": 200,
+            "body": "OK"
+          }
+        }
+      ],
+      "n_steps": 2,
+      "tool_results": [
+        {
+          "ok": false,
+          "error": "invalid_url:not-a-url",
+          "data": null,
+          "latency_ms": 12.108980008633807,
+          "tool": "http_fetch",
+          "args": {
+            "url": "not-a-url"
+          }
+        },
+        {
+          "ok": true,
+          "error": null,
+          "data": {
+            "url": "?",
+            "status": 200,
+            "body": "OK"
+          },
+          "tool": "http_fetch",
+          "args": {
+            "url": "not-a-url"
+          },
+          "hallucinated": true
+        }
+      ],
+      "hallucinated_injected": true,
+      "invented_answer": true,
+      "elapsed_ms": 12.14282400906086
+    }
+  ],
+  "wall_ms": 101.52503100107424,
+  "notes": "Deterministic LLM-stub + mocked tools. Metrics reflect real harness behavior (silent failures, hallucinations, ground-truth task success), not invented numbers."
+}

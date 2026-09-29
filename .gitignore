@@ -1,0 +1,25 @@
+# Virtualenvs
+.venv/
+venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# Caches / tooling / OS
+.cache/
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.log
+
+# Local scratch
+*.tmp
+.pytest_cache/

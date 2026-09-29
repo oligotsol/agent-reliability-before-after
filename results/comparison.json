@@ -1,0 +1,199 @@
+{
+  "before_file": "results/before.json",
+  "after_file": "results/after.json",
+  "before_summary": {
+    "n_tasks": 12,
+    "silent_failure_count": 7,
+    "silent_failure_rate": 0.5833333333333334,
+    "hallucinated_tool_result_count": 7,
+    "hallucinated_tool_result_rate": 0.5833333333333334,
+    "task_success_count": 5,
+    "task_success_rate": 0.4166666666666667,
+    "hard_task_count": 7,
+    "hard_task_success_count": 0,
+    "hard_task_success_rate": 0.0,
+    "easy_task_count": 5,
+    "easy_task_success_count": 5,
+    "easy_task_success_rate": 1.0,
+    "mean_steps": 1.5833333333333333,
+    "mean_latency_ms": 8.399528085040705
+  },
+  "after_summary": {
+    "n_tasks": 12,
+    "silent_failure_count": 0,
+    "silent_failure_rate": 0.0,
+    "hallucinated_tool_result_count": 0,
+    "hallucinated_tool_result_rate": 0.0,
+    "task_success_count": 12,
+    "task_success_rate": 1.0,
+    "hard_task_count": 7,
+    "hard_task_success_count": 7,
+    "hard_task_success_rate": 1.0,
+    "easy_task_count": 5,
+    "easy_task_success_count": 5,
+    "easy_task_success_rate": 1.0,
+    "mean_steps": 2.6666666666666665,
+    "mean_latency_ms": 10.51661574941439
+  },
+  "improvements": {
+    "silent_failure_rate": {
+      "before": 0.5833333333333334,
+      "after": 0.0,
+      "delta_pct": 100.0,
+      "ratio": "Infinity"
+    },
+    "hallucinated_tool_result_rate": {
+      "before": 0.5833333333333334,
+      "after": 0.0,
+      "delta_pct": 100.0,
+      "ratio": "Infinity"
+    },
+    "task_success_rate": {
+      "before": 0.4166666666666667,
+      "after": 1.0,
+      "delta_pct": 139.99999999999997,
+      "ratio": 2.4
+    },
+    "hard_task_success_rate": {
+      "before": 0.0,
+      "after": 1.0,
+      "delta_pct": "Infinity",
+      "ratio": "Infinity"
+    },
+    "mean_steps": {
+      "before": 1.5833333333333333,
+      "after": 2.6666666666666665
+    },
+    "mean_latency_ms": {
+      "before": 8.399528085040705,
+      "after": 10.51661574941439
+    }
+  },
+  "goals": {
+    "silent_failure_reduction_ge_50pct": true,
+    "hard_task_success_ge_2x": true,
+    "goal_met": true
+  },
+  "per_task": [
+    {
+      "task_id": "weather_ok",
+      "category": "success",
+      "before_success": true,
+      "after_success": true,
+      "before_silent_failure": false,
+      "after_silent_failure": false,
+      "before_hallucinated": false,
+      "after_hallucinated": false
+    },
+    {
+      "task_id": "search_ok",
+      "category": "success",
+      "before_success": true,
+      "after_success": true,
+      "before_silent_failure": false,
+      "after_silent_failure": false,
+      "before_hallucinated": false,
+      "after_hallucinated": false
+    },
+    {
+      "task_id": "calc_ok",
+      "category": "success",
+      "before_success": true,
+      "after_success": true,
+      "before_silent_failure": false,
+      "after_silent_failure": false,
+      "before_hallucinated": false,
+      "after_hallucinated": false
+    },
+    {
+      "task_id": "user_ok",
+      "category": "success",
+      "before_success": true,
+      "after_success": true,
+      "before_silent_failure": false,
+      "after_silent_failure": false,
+      "before_hallucinated": false,
+      "after_hallucinated": false
+    },
+    {
+      "task_id": "file_ok",
+      "category": "success",
+      "before_success": true,
+      "after_success": true,
+      "before_silent_failure": false,
+      "after_silent_failure": false,
+      "before_hallucinated": false,
+      "after_hallucinated": false
+    },
+    {
+      "task_id": "weather_bad_city",
+      "category": "failure",
+      "before_success": false,
+      "after_success": true,
+      "before_silent_failure": true,
+      "after_silent_failure": false,
+      "before_hallucinated": true,
+      "after_hallucinated": false
+    },
+    {
+      "task_id": "search_empty",
+      "category": "failure",
+      "before_success": false,
+      "after_success": true,
+      "before_silent_failure": true,
+      "after_silent_failure": false,
+      "before_hallucinated": true,
+      "after_hallucinated": false
+    },
+    {
+      "task_id": "calc_invalid",
+      "category": "failure",
+      "before_success": false,
+      "after_success": true,
+      "before_silent_failure": true,
+      "after_silent_failure": false,
+      "before_hallucinated": true,
+      "after_hallucinated": false
+    },
+    {
+      "task_id": "fetch_timeout",
+      "category": "failure",
+      "before_success": false,
+      "after_success": true,
+      "before_silent_failure": true,
+      "after_silent_failure": false,
+      "before_hallucinated": true,
+      "after_hallucinated": false
+    },
+    {
+      "task_id": "file_missing",
+      "category": "failure",
+      "before_success": false,
+      "after_success": true,
+      "before_silent_failure": true,
+      "after_silent_failure": false,
+      "before_hallucinated": true,
+      "after_hallucinated": false
+    },
+    {
+      "task_id": "user_bad_args",
+      "category": "failure",
+      "before_success": false,
+      "after_success": true,
+      "before_silent_failure": true,
+      "after_silent_failure": false,
+      "before_hallucinated": true,
+      "after_hallucinated": false
+    },
+    {
+      "task_id": "http_bad_url",
+      "category": "failure",
+      "before_success": false,
+      "after_success": true,
+      "before_silent_failure": true,
+      "after_silent_failure": false,
+      "before_hallucinated": true,
+      "after_hallucinated": false
+    }
+  ]
+}
